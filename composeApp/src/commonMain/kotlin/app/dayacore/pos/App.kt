@@ -30,14 +30,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import app.dayacore.pos.theme.AppTheme
 import app.dayacore.pos.theme.LocalThemeIsDark
-import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import pos_dayacore.composeapp.generated.resources.IndieFlower_Regular
 import pos_dayacore.composeapp.generated.resources.Res
 import pos_dayacore.composeapp.generated.resources.cyclone
 import pos_dayacore.composeapp.generated.resources.ic_cyclone
@@ -60,7 +57,6 @@ internal fun App() = AppTheme {
     ) {
         Text(
             text = stringResource(Res.string.cyclone),
-            fontFamily = FontFamily(Font(Res.font.IndieFlower_Regular)),
             style = MaterialTheme.typography.displayLarge
         )
 
