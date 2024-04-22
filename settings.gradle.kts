@@ -1,4 +1,5 @@
 rootProject.name = "POS-DayaCore"
+include(":core")
 include(":composeApp")
 
 pluginManagement {

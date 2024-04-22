@@ -12,6 +12,8 @@ plugins {
     alias(libs.plugins.kotlinx.serialization)
 }
 
+val packageName = "app.dayacore.pos"
+
 kotlin {
     androidTarget {
         compilations.all {
@@ -68,14 +70,14 @@ kotlin {
 }
 
 android {
-    namespace = "app.dayacore.pos"
+    namespace = packageName
     compileSdk = 34
 
     defaultConfig {
         minSdk = 24
         targetSdk = 34
 
-        applicationId = "app.dayacore.pos.androidApp"
+        applicationId = "$packageName.androidApp"
         versionCode = 1
         versionName = "1.0.0"
 
@@ -115,8 +117,8 @@ android {
         getByName("debug") {
             if (isSigningKeyExists) signingConfig = signingConfigs.getByName("release")
 
-            isShrinkResources = true
-            isMinifyEnabled = true
+            isShrinkResources = false
+            isMinifyEnabled = false
             isDebuggable = true
 
             setProguardFiles(
@@ -152,4 +154,8 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
     }
+}
+
+dependencies {
+    commonMainApi(project(":core"))
 }

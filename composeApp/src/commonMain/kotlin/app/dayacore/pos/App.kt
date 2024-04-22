@@ -31,8 +31,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
-import app.dayacore.pos.theme.AppTheme
-import app.dayacore.pos.theme.LocalThemeIsDark
+import app.dayacore.pos.theme.getTypography
+import app.dayacore.theme.AppTheme
+import app.dayacore.theme.LocalThemeIsDark
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
 import pos_dayacore.composeapp.generated.resources.Res
@@ -47,7 +48,9 @@ import pos_dayacore.composeapp.generated.resources.stop
 import pos_dayacore.composeapp.generated.resources.theme
 
 @Composable
-internal fun App() = AppTheme {
+internal fun App() = AppTheme(
+    typography = getTypography()
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -116,11 +119,9 @@ internal fun App() = AppTheme {
             modifier = Modifier
                 .padding(horizontal = 8.dp, vertical = 4.dp)
                 .widthIn(min = 200.dp),
-            onClick = { openUrl("https://github.com/terrakok") },
+            onClick = { },
         ) {
             Text(stringResource(Res.string.open_github))
         }
     }
 }
-
-internal expect fun openUrl(url: String?)
