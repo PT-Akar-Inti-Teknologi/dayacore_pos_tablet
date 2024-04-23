@@ -157,5 +157,6 @@ android {
 }
 
 dependencies {
-    commonMainApi(project(":core"))
+    "commonMainApi"(project(":composeCore:core"))
+    "commonMainApi"(project(":composeCore:libs:keyboardLib"))
 }

@@ -1,5 +1,6 @@
 rootProject.name = "POS-DayaCore"
-include(":core")
+include(":composeCore:core")
+include(":composeCore:libs:keyboardLib")
 include(":composeApp")
 
 pluginManagement {
@@ -11,6 +12,11 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            from(files("composeCore/libs.versions.toml"))
+        }
+    }
     repositories {
         google()
         mavenCentral()
